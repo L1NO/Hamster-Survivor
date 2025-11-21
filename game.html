@@ -106,18 +106,18 @@
             name: "Sunflower", sprite: "🌻", type: "proj", pattern: "aimed", passive: {s:"xpMult",v:0.2,n:"+XP"}, 
             base:{dmg:15, cd:50, speed:6, count:1, dur:60}, 
             upgrades:[
-                {v:{count:1}, d:"+1 Count"},        // L2
+                {v:{count:2}, d:"+2 Count"},        // L2
                 {v:{dmg:10}, d:"+10 Dmg"},          // L3
-                {v:{count:1}, d:"+1 Count"},        // L4
+                {v:{count:5}, d:"+5 Count"},        // L4
                 {v:{dmg:20}, d:"+20 Dmg"}           // L5
             ]
         },
         cheese: { 
             name: "Cheese", sprite: "🧀", type: "aura", pattern: "aura", passive: {s:"maxHpMult",v:0.3,n:"+HP"}, 
-            base:{dmg:2, cd:20, area:70}, 
+            base:{dmg:10, cd:10, area:70}, 
             upgrades:[
                 {v:{area:1.3}, d:"+30% Area"},      // L2
-                {v:{dmg:2}, d:"+2 Dmg"},            // L3
+                {v:{dmg:20}, d:"+20 Dmg"},            // L3
                 {v:{area:1.2}, d:"+20% Area"},      // L4
                 {v:{cd:0.8}, d:"-20% Cooldown"}     // L5
             ]
@@ -128,7 +128,7 @@
             upgrades:[
                 {v:{count:1}, d:"+1 Shield"},       // L2
                 {v:{speed:1.3}, d:"+30% Spin"},     // L3
-                {v:{count:1}, d:"+1 Shield"},       // L4
+                {v:{count:2}, d:"+2 Shield"},       // L4
                 {v:{area:1.4}, d:"+40% Area"}       // L5
             ]
         },
@@ -157,34 +157,34 @@
             base:{dmg:10, cd:40, speed:5, count:1, dur:100}, 
             upgrades:[
                 {v:{count:1}, d:"+1 Dagger"},       // L2
-                {v:{dmg:10}, d:"+10 Dmg"},          // L3
+                {v:{dmg:30}, d:"+30 Dmg"},          // L3
                 {v:{count:1}, d:"+1 Dagger"},       // L4
-                {v:{dmg:20}, d:"+20 Dmg"}           // L5
+                {v:{dmg:80}, d:"+80 Dmg"}           // L5
             ]
         }
     };
 
     // EVOLUTIONS (Require Lvl 5 + Lvl 5)
     const RECIPES = [
-        { a:'seed', b:'cheese', res:'gatling',   name:"Gatling Pea",   sprite:"🌵", pattern:"aimed",  stats:{dmg:25, cd:4, speed:12, count:1, dur:90} },
-        { a:'seed', b:'love',   res:'flower',    name:"Flower Power",  sprite:"🌸", pattern:"radial", stats:{dmg:50, cd:30, speed:3, count:12, dur:100} },
-        { a:'seed', b:'bird',   res:'pollinate', name:"Pollinator",    sprite:"🐝", pattern:"summon", stats:{dmg:20, cd:10, speed:7, count:6, dur:9999} }, // Summon Swarm
+        { a:'seed', b:'cheese', res:'gatling',   name:"Gatling Pea",   sprite:"🌵", pattern:"aimed",  stats:{dmg:100, cd:4, speed:12, count:1, dur:90} },
+        { a:'seed', b:'love',   res:'flower',    name:"Flower Power",  sprite:"🌸", pattern:"radial", stats:{dmg:150, cd:30, speed:3, count:12, dur:100} },
+        { a:'seed', b:'bird',   res:'pollinate', name:"Pollinator",    sprite:"🐝", pattern:"summon", stats:{dmg:200, cd:10, speed:7, count:6, dur:9999} }, // Summon Swarm
         { a:'seed', b:'axe',    res:'razor',     name:"Razor Leaf",    sprite:"🍃", pattern:"aimed",  stats:{dmg:100, cd:15, speed:10, count:3, dur:60} },
-        { a:'seed', b:'dagger', res:'needles',   name:"Needle Rain",   sprite:"🌧️", pattern:"rain",   stats:{dmg:40, cd:3, speed:10, count:2, dur:40} },
+        { a:'seed', b:'dagger', res:'needles',   name:"Needle Rain",   sprite:"🌧️", pattern:"rain",   stats:{dmg:200, cd:3, speed:10, count:2, dur:40} },
         
-        { a:'cheese',b:'axe',   res:'toxic',     name:"Toxic Shock",   sprite:"☣️", pattern:"radial", stats:{dmg:80, cd:60, speed:5, count:24, dur:50} },
+        { a:'cheese',b:'axe',   res:'toxic',     name:"Toxic Shock",   sprite:"☣️", pattern:"radial", stats:{dmg:180, cd:60, speed:5, count:24, dur:50} },
         { a:'cheese',b:'dagger',res:'venom',     name:"Venom Strike",  sprite:"🐍", pattern:"random", stats:{dmg:200, cd:10, speed:12, count:1, dur:30} },
         { a:'cheese',b:'bird',  res:'phoenix',   name:"Phoenix King",  sprite:"🔥", pattern:"summon", stats:{dmg:100, cd:60, speed:5, count:3, dur:9999} }, // Summon Phoenix
-        { a:'cheese',b:'love',  res:'nuke',      name:"Nuclear Brie",  sprite:"☢️", pattern:"aura",   stats:{dmg:15, cd:8, area:250} },
+        { a:'cheese',b:'love',  res:'nuke',      name:"Nuclear Brie",  sprite:"☢️", pattern:"aura",   stats:{dmg:150, cd:8, area:250} },
         
-        { a:'love',  b:'bird',  res:'cupid',     name:"Cupid Squad",   sprite:"👼", pattern:"orbit",  stats:{dmg:60, cd:20, count:6, speed:0.08, area:120} }, 
-        { a:'love',  b:'dagger',res:'heartbreak',name:"Heartbreaker",  sprite:"💔", pattern:"orbit",  stats:{dmg:100, cd:30, count:4, speed:0.1, area:80} },
-        { a:'love',  b:'axe',   res:'valkyrie',  name:"Valkyrie",      sprite:"🌪️", pattern:"radial", stats:{dmg:200, cd:20, speed:4, count:16, dur:100} },
+        { a:'love', b:'bird',  res:'cupid',     name:"Cupid Squad",   sprite:"👼", pattern:"orbit",  stats:{dmg:160, cd:20, count:6, speed:0.08, area:120} }, 
+        { a:'love', b:'dagger',res:'heartbreak',name:"Heartbreaker",  sprite:"💔", pattern:"orbit",  stats:{dmg:100, cd:30, count:4, speed:0.1, area:80} },
+        { a:'love', b:'axe',   res:'valkyrie',  name:"Valkyrie",      sprite:"🌪️", pattern:"radial", stats:{dmg:200, cd:20, speed:4, count:16, dur:100} },
         
-        { a:'bird',  b:'axe',   res:'cleaver',   name:"Sky Cleaver",   sprite:"🏺", pattern:"aimed",  stats:{dmg:300, cd:40, speed:8, count:4, dur:80} },
-        { a:'bird',  b:'dagger',res:'ninja',     name:"Ninja Crows",   sprite:"🥷", pattern:"summon", stats:{dmg:300, cd:20, speed:10, count:2, dur:9999} }, // Summon Ninjas
+        { a:'bird', b:'axe',   res:'cleaver',   name:"Sky Cleaver",   sprite:"🏺", pattern:"aimed",  stats:{dmg:300, cd:40, speed:8, count:4, dur:80} },
+        { a:'bird', b:'dagger',res:'ninja',     name:"Ninja Crows",   sprite:"🥷", pattern:"summon", stats:{dmg:300, cd:20, speed:10, count:2, dur:9999} }, // Summon Ninjas
         
-        { a:'axe',   b:'dagger',res:'grinder',   name:"Meat Grinder",  sprite:"⚙️", pattern:"orbit",  stats:{dmg:80, cd:5, count:8, speed:0.15, area:50} }
+        { a:'axe', b:'dagger',res:'grinder',   name:"Meat Grinder",  sprite:"⚙️", pattern:"orbit",  stats:{dmg:280, cd:5, count:8, speed:0.15, area:50} }
     ];
 
     // Merged Definition
@@ -203,7 +203,7 @@
     
     const player = {
         x: 0, y: 0, hp: 100, maxHp: 100, baseMaxHp: 100, speed: 4, baseSpeed: 4,
-        xp: 0, nextXp: 20, level: 1, // Increased base XP (Slower level up)
+        xp: 0, nextXp: 10, level: 1, // Increased base XP (Slower level up)
         xpMult: 1, areaMult: 1, dmgMult: 1, hpRegen: 0,
         inventory: { 'seed': 1 }
     };
@@ -403,7 +403,7 @@
                     // Hover around player if no enemies
                     let dToP = Math.hypot(player.x-b.x, player.y-b.y);
                     if(dToP > 100) {
-                         let a = Math.atan2(player.y-b.y, player.x-b.x);
+                        let a = Math.atan2(player.y-b.y, player.x-b.x);
                          b.x += Math.cos(a) * b.speed;
                          b.y += Math.sin(a) * b.speed;
                     }
